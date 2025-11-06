@@ -1,0 +1,67 @@
+import requests
+import json
+
+# bornes de date
+start_timestamp = 1697519436
+end_timestamp = 1723733825
+
+
+cookies = {
+    'spid': '1762416775975_d714b52058a6a07a554be18110385fe0_iw9k3iiuwic44e7f',
+    'newsListCounter': '0',
+}
+
+headers = {
+    'accept': 'application/json, text/plain, */*',
+    'accept-language': 'fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6,bg;q=0.5',
+    'content-type': 'application/json;charset=UTF-8',
+    'origin': 'https://tass.com',
+    'priority': 'u=1, i',
+    'referer': 'https://tass.com/',
+    'sec-ch-ua': '"Chromium";v="142", "Microsoft Edge";v="142", "Not_A Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0',
+    # 'cookie': 'spid=1762416775975_d714b52058a6a07a554be18110385fe0_iw9k3iiuwic44e7f; newsListCounter=0',
+}
+
+json_data = {
+    'sectionId': 4953,
+    'limit': 50000,
+    'type': 'all',
+    'excludeNewsIds': '2039839,2039681,2039641,2039585',
+    'imageSize': 434
+}
+
+response = requests.post('https://tass.com/userApi/categoryNewsList', cookies=cookies, headers=headers, json=json_data)
+
+# Note: json_data will not be serialized by requests
+# exactly as it was in the original request.
+#data = '{"sectionId":4953,"limit":20,"type":"all","excludeNewsIds":"2039839,2039681,2039641,2039585","imageSize":434}'
+#response = requests.post('https://tass.com/userApi/categoryNewsList', cookies=cookies, headers=headers, data=data)
+
+# Traitement de la réponse
+if response.status_code == 200:
+    data = response.json()
+    articles = data.get("newsList", [])
+
+    # Filtrage par date
+    filtered_articles = [
+        article for article in articles
+        if start_timestamp <= article.get("date", 0) <= end_timestamp
+    ]
+
+    # Format final
+    output = {
+        "newsList": filtered_articles
+    }
+# Écriture dans le fichier articles.json
+    with open("articles.json", "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+    print(f"{len(filtered_articles)} articles sauvegardés dans articles.json")
+else:
+    print(f"Erreur {response.status_code} : {response.text}")
