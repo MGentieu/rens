@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "tass",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
