@@ -13,17 +13,28 @@ OUTPUT_FILE = "articles_ner.json"
 target_labels = {"PERSON", "ORG", "GPE", "PRODUCT", "EVENT"}
 
 def keep_longest_if_substring(entities):
-    unique = list(dict.fromkeys(entities))  # préserve ordre d'apparition, supprime doublons exacts
-    keep = []
-    lowered = [e.lower() for e in unique]
+    # 1) Dédoublonnage insensible à la casse en gardant la version la plus longue
+    mapping = {}  # lower -> best original
+    for e in entities:
+        key = e.lower()
+        if key in mapping:
+            # garde la version la plus longue (ou la première si même longueur)
+            if len(e) > len(mapping[key]):
+                mapping[key] = e
+        else:
+            mapping[key] = e
 
+    unique = list(mapping.values())
+    lowered = [u.lower() for u in unique]
+
+    # 2) Supprimer les éléments qui sont strictement contenus dans un autre
+    keep = []
     for i, e in enumerate(unique):
         e_low = lowered[i]
         is_sub = False
         for j, other_low in enumerate(lowered):
             if i == j:
                 continue
-            # si e est strictement contenu dans other (et other est plus long), on le considère redondant
             if e_low in other_low and len(other_low) > len(e_low):
                 is_sub = True
                 break
