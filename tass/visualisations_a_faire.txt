@@ -1,0 +1,10 @@
+1. Diagramme de barres : nombre de fois où chaque personne est évoquée.
+2. Courbe qui montre l'augmentation du nombre de fois où Wagner est cité.
+3. Evolution du sentiment pour l'Ukraine.
+4. Mean(sentiment) par pays (regardez pour les filtres par année.)
+5. Les personnes les plus citées dans le NER
+6. Même chose pour les tags.
+7. Camembert : Apparition des pays (libre interprétation) Country occurrence
+8. Pourcentage positif / négatif
+9. Top 5 des pays les plus ment
+10. Nombre d'articles.

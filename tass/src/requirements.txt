@@ -4,3 +4,4 @@ spacy
 python-dotenv
 os
 mistralai
+elasticsearch
