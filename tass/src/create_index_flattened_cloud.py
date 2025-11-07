@@ -1,16 +1,26 @@
 import json
 from elasticsearch import Elasticsearch, helpers
+from dotenv import load_dotenv
+import os
 
-# 🔹 Connexion à Elasticsearch
-# Assumes Elasticsearch is at localhost:9200 and using the password from your .env
+
+cloud_url = "https://a687f6d1571f4f6ab6f8c80b66f8af15.us-central1.gcp.cloud.es.io:443"  # ← ton URL cloud
+index_name = "press_articles_flattened"
+load_dotenv("../.env")
+api_key = os.getenv("ELASTIC_SEARCH_API_KEY")
+
+# --- Connexion Elasticsearch Cloud ---
 es = Elasticsearch(
-    "https://localhost:9200",
-    basic_auth=("elastic", "elastic"),
-    verify_certs=False  # changez avec votre ELASTIC_PASSWORD
+    cloud_url,
+    api_key=api_key,
+    verify_certs=True  # en production, toujours True
 )
 
-# 🔹 Nom de l'index
-index_name = "index1_flattend"
+# --- Vérifier la connexion ---
+if es.ping():
+    print("✅ Connexion réussie à Elasticsearch Cloud")
+else:
+    print("❌ Échec de la connexion au cluster")
 
 # 🔹 Créer l'index (si il n'existe pas)
 if not es.indices.exists(index=index_name):
@@ -30,7 +40,7 @@ else:
     print(f"Index '{index_name}' already exists.")
 
 # 🔹 Charger le fichier JSON
-with open("../data/articles_structured_phase3bis.json", "r", encoding="utf-8") as f:
+with open("../data/flattened_structured_articles.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 # 🔹 Préparer les documents pour bulk insert
