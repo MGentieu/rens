@@ -1,0 +1,4 @@
+requests
+beautifulsoup4
+spacy
+en_core_web_trf
