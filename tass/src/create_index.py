@@ -10,50 +10,18 @@ es = Elasticsearch(
 )
 
 # 🔹 Nom de l'index
-index_name = "index1"
+index_name = "index1_flattend"
 
 # 🔹 Créer l'index (si il n'existe pas)
 if not es.indices.exists(index=index_name):
     es.indices.create(index=index_name, mappings={
        "properties": {
             "id": {"type": "long"},
-            "isFlash": {"type": "integer"},
-            "isOnline": {"type": "integer"},
-            "type": {"type": "keyword"},
             "mark": {"type": "text"},
             "date": {"type": "date", "format": "epoch_second"},
             "title": {"type": "text"},
-            "subtitle": {"type": "text"},
-            "lead": {"type": "text"},
-            "image": {"type": "keyword"},
-            "link": {"type": "keyword"},
-            "sponsor_id": {"type": "long", "null_value": -1},
-            "sponsor_type_id": {"type": "long", "null_value": -1},
-            "text": {"type": "text"},
-            "tags": {"type": "keyword"},
-            "ner": {
-                "properties": {
-                    "PERSON": {"type": "keyword"},
-                    "ORG": {"type": "keyword"},
-                    "GPE": {"type": "keyword"},
-                    "PRODUCT": {"type": "keyword"}
-                }
-            },
-            "semantic_analysis": {
-                "properties": {
-                    "topics": {"type": "keyword"},
-                    "overall_sentiment": {"type": "float"},
-                    "sentiment_by_country": {
-                        "type": "nested",
-                        "properties": {
-                            "country": {"type": "keyword"},
-                            "sentiment": {"type": "float"}
-                        }
-                    },
-                    "actor_mentioned": {"type": "keyword"},
-                    "article_type": {"type": "keyword"}
-                }
-            }
+            "country": {"type": "text"},
+            "sentiment": {"type": "float"}
         }
     }
 )
