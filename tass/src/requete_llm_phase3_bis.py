@@ -3,7 +3,7 @@ from mistralai import Mistral
 from dotenv import load_dotenv
 import json
 
-load_dotenv("../.env.exemple")
+load_dotenv("../.env")
 api_key = os.getenv("MISTRAL_API_KEY")
 model = "mistral-medium-2508"
 client = Mistral(api_key=api_key)
