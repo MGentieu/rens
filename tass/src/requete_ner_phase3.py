@@ -6,8 +6,8 @@ from collections import defaultdict
 nlp = spacy.load("en_core_web_trf")
 
 # Fichier d'entrée / sortie
-INPUT_FILE = "articles_sample.json"
-OUTPUT_FILE = "articles_ner.json"
+INPUT_FILE = "../data/articles_sample.json"
+OUTPUT_FILE = "../data/articles_ner.json"
 
 # Labels ciblés
 target_labels = {"PERSON", "ORG", "GPE", "PRODUCT", "EVENT"}

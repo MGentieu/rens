@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import time
 
 # Charger les articles depuis le fichier JSON
-with open("articles.json", "r", encoding="utf-8") as f:
+with open("../data/articles.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 base_url = "https://tass.com"
@@ -47,7 +47,7 @@ for article in articles:
     time.sleep(0.5)  # Pause pour éviter de surcharger le serveur
 
 # Sauvegarder les articles enrichis
-with open("articles_enrichis.json", "w", encoding="utf-8") as f:
+with open("../data/articles_enrichis.json", "w", encoding="utf-8") as f:
     json.dump({"newsList": enriched_articles}, f, ensure_ascii=False, indent=2)
 
 print("✅ Tous les articles enrichis ont été sauvegardés dans articles_enrichis.json")

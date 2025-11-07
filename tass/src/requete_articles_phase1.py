@@ -56,7 +56,7 @@ if __name__ == "__main__":
             "newsList": filtered_articles
         }
     # Écriture dans le fichier articles.json
-        with open("articles.json", "w", encoding="utf-8") as f:
+        with open("../data/articles.json", "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
         print(f"{len(filtered_articles)} articles sauvegardés dans articles.json")
