@@ -20,7 +20,7 @@ if not es.indices.exists(index=index_name):
             "mark": {"type": "text"},
             "date": {"type": "date", "format": "epoch_second"},
             "title": {"type": "text"},
-            "country": {"type": "text"},
+            "country": {"type": "keyword"},
             "sentiment": {"type": "float"}
         }
     }
