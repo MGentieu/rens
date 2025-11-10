@@ -17,6 +17,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
 }
 
+i = 1
 for article in articles:
     url = base_url + article["link"]
     try:
@@ -38,13 +39,14 @@ for article in articles:
             article["tags"] = tags
             enriched_articles.append(article)
 
-            print(f"✅ {article['id']} récupéré")
+            print(f"✅ Article {i} : id = {article['id']} récupéré")
         else:
-            print(f"❌ {article['id']} erreur HTTP {response.status_code}")
+            print(f"❌ Article {i} : id = {article['id']} erreur HTTP {response.status_code}")
+        i = i+1
     except Exception as e:
         print(f"⚠️ {article['id']} erreur : {e}")
 
-    time.sleep(0.5)  # Pause pour éviter de surcharger le serveur
+    time.sleep(0.3)  # Pause pour éviter de surcharger le serveur
 
 # Sauvegarder les articles enrichis
 with open("../data/p2_articles.json", "w", encoding="utf-8") as f:

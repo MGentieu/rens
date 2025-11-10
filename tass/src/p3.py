@@ -48,6 +48,7 @@ with open(INPUT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Traitement des articles
+i = 1
 for article in data.get("newsList", []):
     text = article.get("text", "")
     if not text or not text.strip():
@@ -68,6 +69,8 @@ for article in data.get("newsList", []):
         cleaned[label] = keep_longest_if_substring(sorted(entities))
 
     article["ner"] = cleaned
+    print(f"Article {i} fini")
+    i = i+1
 
 # Sauvegarder dans un nouveau fichier
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:

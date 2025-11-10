@@ -35,9 +35,7 @@ with open("../data/100_articles_sources_pour_p3_bis.json", "r", encoding="utf-8"
 i=1
 # Liste pour stocker les articles enrichis
 enriched_articles = []
-for article in articles:
-    print(article)
-    
+for article in articles:    
     try:
         messages = [
             {
@@ -69,4 +67,4 @@ for article in articles:
 with open("../data/p3_bis_100_articles.json", "w", encoding="utf-8") as f:
     json.dump({"newsList": enriched_articles}, f, ensure_ascii=False, indent=2)
 
-print("✅ Tous les articles enrichis ont été sauvegardés dans articles_enrichis.json")
+print("✅ Tous les articles enrichis ont été sauvegardés dans p3_bis_100_articles.json")
