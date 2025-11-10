@@ -5,7 +5,7 @@ import os
 
 
 cloud_url = "https://a687f6d1571f4f6ab6f8c80b66f8af15.us-central1.gcp.cloud.es.io:443"  # ← ton URL cloud
-index_name = "press_articles"
+index_name = "all_press_articles"
 load_dotenv("../.env")
 api_key = os.getenv("ELASTIC_SEARCH_API_KEY")
 
@@ -48,7 +48,7 @@ if not es.indices.exists(index=index_name):
                     "PRODUCT": {"type": "keyword"}
                 }
             },
-            "semantic_analysis": {
+            "structured": {
                 "properties": {
                     "topics": {"type": "keyword"},
                     "overall_sentiment": {"type": "float"},
@@ -71,7 +71,7 @@ else:
     print(f"Index '{index_name}' already exists.")
 
 # 🔹 Charger le fichier JSON
-with open("../data/p3_bis_100_articles.json", "r", encoding="utf-8") as f:
+with open("../data/p3_bis_21k_articles.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 # 🔹 Préparer les documents pour bulk insert

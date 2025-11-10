@@ -5,7 +5,7 @@ import os
 
 
 cloud_url = "https://a687f6d1571f4f6ab6f8c80b66f8af15.us-central1.gcp.cloud.es.io:443"  # ← ton URL cloud
-index_name = "press_articles_flattened"
+index_name = "all_press_articles_flattened"
 load_dotenv("../.env")
 api_key = os.getenv("ELASTIC_SEARCH_API_KEY")
 
@@ -40,7 +40,7 @@ else:
     print(f"Index '{index_name}' already exists.")
 
 # 🔹 Charger le fichier JSON
-with open("../data/p3_bis_100_articles_flattened.json", "r", encoding="utf-8") as f:
+with open("../data/p3_bis_21k_articles_flattened.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 # 🔹 Préparer les documents pour bulk insert

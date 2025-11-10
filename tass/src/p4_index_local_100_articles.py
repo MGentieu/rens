@@ -62,7 +62,7 @@ else:
     print(f"Index '{index_name}' already exists.")
 
 # 🔹 Charger le fichier JSON
-with open("../data/articles_structured_phase3bis.json", "r", encoding="utf-8") as f:
+with open("../data/p3_bis_100_articles.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 # 🔹 Préparer les documents pour bulk insert
