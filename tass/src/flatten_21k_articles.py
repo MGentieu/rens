@@ -37,4 +37,4 @@ output_file = "../data/p3_bis_21k_articles_flattened.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(flattened_articles, f, indent=2, ensure_ascii=False)
 
-print(f"✅ {i} articles traités et enregistrés dans {output_file}")
+print(f"✅ {len(flattened_articles)} articles traités et enregistrés dans {output_file}")

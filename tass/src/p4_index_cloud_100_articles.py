@@ -75,6 +75,7 @@ with open("../data/p3_bis_100_articles.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 # 🔹 Préparer les documents pour bulk insert
+print(len(articles))
 actions = []
 for article in articles:
     actions.append({

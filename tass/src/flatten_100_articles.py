@@ -6,8 +6,9 @@ with open("../data/p3_bis_100_articles.json", "r", encoding="utf-8") as f:
 
 flattened_articles = []
 
-i = 1
+i = 0
 for article in articles:
+    i = i+1
     id = article.get("id")
     print(f"Article {i} : id = {id}")
 
@@ -30,11 +31,10 @@ for article in articles:
         })
         
     print(f"Article {i} : id = {id} fini")
-    i = i+1
 
 # --- Écriture du résultat dans un fichier JSON ---
 output_file = "../data/p3_bis_100_articles_flattened.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(flattened_articles, f, indent=2, ensure_ascii=False)
 
-print(f"✅ {i} articles traités et enregistrés dans {output_file}")
+print(f"✅i = {i} : {len(flattened_articles)} objets enregistrés dans {output_file}")
