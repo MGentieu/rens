@@ -29,7 +29,7 @@ strctured : {
 """
 articles = []
 # Charger les articles depuis le fichier JSON
-with open("../data/source_json_pour_llm.json", "r", encoding="utf-8") as f:
+with open("../data/100_articles_sources_pour_p3_bis.json", "r", encoding="utf-8") as f:
     articles = json.load(f)
 
 i=1
@@ -66,7 +66,7 @@ for article in articles:
         print(f"⚠️ {article['id']} erreur : {e}")
 
 # Sauvegarder les articles enrichis
-with open("../data/articles_remplis_phase3_bis.json", "w", encoding="utf-8") as f:
+with open("../data/p3_bis_100_articles.json", "w", encoding="utf-8") as f:
     json.dump({"newsList": enriched_articles}, f, ensure_ascii=False, indent=2)
 
 print("✅ Tous les articles enrichis ont été sauvegardés dans articles_enrichis.json")
