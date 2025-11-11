@@ -28,3 +28,11 @@ On peut aussi s'intéresser au sentiment par pays :
 
 On observe notamment une rhétorique assez tournée à l'encontre des États-Unis, et dans une moindre mesure l'Europe.
 La Russie est montrée sous une bonne lumière et les sentiments des pays avec lesquels la Russie entretient de bonnes relations, comme la Chine, ont une note relativement bonne (autour de 0.1 à 0.2 sur une échelle allant de -1 à 1).
+
+### Point sur le nucléaire :
+
+En analysant dans les articles la récurrence des sujets d'attaque ou frappe nucléaire, de sécurité et d'armes nucléaires, on obtient la courbe suivante : 
+
+![3e partie du dashboard : ](./focus_nucleaire.png)
+
+On remarque que c'est un sujet souvent discuté, mais qui a explosé en apparition pendant l'année 2023 en particulier. A l'heure d'aujourd'hui, on dénombre moins d'occurrences qu'avant la déclaration de la guerre contre l'Ukraine, ce qui laisse a penser que la Russie ne préparerait pas une attaque nucléaire imminente sur le pays voisin.
