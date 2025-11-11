@@ -20,4 +20,11 @@
 
 On relève tout d'abord un point intéressant concernant la guerre en Ukraine. En effet, si on s'intéresse à la courbe représentant l'évolution du sentiment global concernant l'Ukraine, on observe que le sentiment a toujours été plus négatif, mais on observe une dégradation à partir de la fin de 2021 et tout particulièrement à partir du début de la guerre :
 
-![3e partie du dashboard : ](./focus_ukraine.jpg)
+![Focus Ukraine : ](./focus_ukraine.jpg)
+
+On peut aussi s'intéresser au sentiment par pays :
+
+![Focus Monde : ](./focus_monde.jpg)
+
+On observe notamment une rhétorique assez tournée à l'encontre des États-Unis, et dans une moindre mesure l'Europe.
+La Russie est montrée sous une bonne lumière et les sentiments des pays avec lesquels la Russie entretient de bonnes relations, comme la Chine, ont une note relativement bonne (autour de 0.1 à 0.2 sur une échelle allant de -1 à 1).
