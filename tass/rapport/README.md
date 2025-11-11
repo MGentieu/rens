@@ -15,3 +15,9 @@
 ![1re partie du dashboard : ](./Dashboard_21k_articles_1.jpg)
 ![2e partie du dashboard : ](./Dashboard_21k_articles_2.jpg)
 ![3e partie du dashboard : ](./Dashboard_21k_articles_3.jpg)
+
+### Analyse
+
+On relève tout d'abord un point intéressant concernant la guerre en Ukraine. En effet, si on s'intéresse à la courbe représentant l'évolution du sentiment global concernant l'Ukraine, on observe que le sentiment a toujours été plus négatif, mais on observe une dégradation à partir de la fin de 2021 et tout particulièrement à partir du début de la guerre :
+
+![3e partie du dashboard : ](./focus_ukraine.jpg)
