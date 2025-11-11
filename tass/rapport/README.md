@@ -37,6 +37,6 @@ En analysant dans les articles la récurrence des sujets d'attaque ou frappe nuc
 
 On remarque que c'est un sujet souvent discuté, mais qui a explosé en apparition pendant l'année 2023 en particulier. A l'heure d'aujourd'hui, on dénombre moins d'occurrences qu'avant la déclaration de la guerre contre l'Ukraine, ce qui laisse a penser que la Russie ne préparerait pas une attaque nucléaire imminente sur le pays voisin.
 
-Lorsque les articles parlent de nucléaire, les organisations principales mentionnées sont les forces armées aériennes, spatiales et stratégiques russes. On voit ici sur cette courbe une diminution de leurs occurrences depuis 2023 qui va également dans le sens du graphe précédent.
+Lorsque les articles parlent de nucléaire, les organisations principales mentionnées sont les forces armées aériennes, spatiales et stratégiques russes. On voit ici sur cette courbe une diminution de leurs occurrences depuis 2024 qui va également dans le sens du graphe précédent.
 
 ![3e partie du dashboard : ](./armees_russes.png)
