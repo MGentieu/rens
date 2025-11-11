@@ -1,5 +1,5 @@
 # IA de renseignement : groupe 2
-### GENTIEU Martin | GUILLAUME 
+### GENTIEU Martin | GUILLAUME Célian
 
 
 Ce projet extrait du texte de pages web, puis l'analyse linguistique avec un NER (de Spacy) et un LLM (Mistral).
@@ -63,7 +63,7 @@ On pourra ensuite exécuter les scripts python pour bien formater les chemins re
 
 ### Visualisation :
 
-La visualisation des données dans un tableau de bord et l'analyse des résultats est ensuite effectuée dans les fichiers suivants :
+La visualisation des données dans un tableau de bord et l'analyse des résultats est ensuite effectuée dans le dossier *rapport*
 
 
 
