@@ -21,3 +21,8 @@
 On relève tout d'abord un point intéressant concernant la guerre en Ukraine. En effet, si on s'intéresse à la courbe représentant l'évolution du sentiment global concernant l'Ukraine, on observe que le sentiment a toujours été plus négatif, mais on observe une dégradation à partir de la fin de 2021 et tout particulièrement à partir du début de la guerre :
 
 ![3e partie du dashboard : ](./focus_ukraine.jpg)
+
+En analysant dans les articles la récurrence des sujets d'attaque ou frappe nucléaire, de sécurité et d'armes nucléaires, on obtient la courbe suivante : 
+![3e partie du dashboard : ](./focus_nucleaire.png)
+
+On remarque que c'est un sujet souvent discuté, mais qui a explosé en apparition pendant l'année 2023 en particulier. A l'heure d'aujourd'hui, on dénombre moins d'occurrences qu'avant la déclaration de la guerre contre l'Ukraine, ce qui laisse a penser que la Russie ne préparerait pas une attaque nucléaire imminente sur le pays voisin.
